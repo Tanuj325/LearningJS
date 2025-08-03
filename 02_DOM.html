@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM LEARNING</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="language">
+      <li class="list">Javascript</li>
+    </ul>
+  </body>
+  <script>
+    function addLang(langName) {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(listItem);
+    }
+    addLang("Python");
+    addLang("Java");
+    addLang("Kotlin");
+
+    function addOptiLanguage(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addOptiLanguage("C");
+    addOptiLanguage("C++");
+
+    //EDIT
+
+    const secondLanguage = document.querySelector("li:nth-child(2)");
+    const newli = document.createElement("li");
+    newli.textContent = "Ruby";
+    secondLanguage.replaceWith(newli);
+
+    //REMOVE
+
+    const element = document.querySelector('li:nth-child(2)')
+    element.remove()
+  </script>
+</html>
