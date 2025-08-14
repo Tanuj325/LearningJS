@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Event</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing Image</h2>
+    <div class="main">
+      <ul class="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="C:\Amity University\ai3.jpg"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="C:\Amity University\ai3.jpg"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="C:\Amity University\ai3.jpg"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="C:\Amity University\ai3.jpg"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    //document.getElementById("owl").onclick = function () {
+      //alert("OWL");
+    //};
+    document.getElementById('owl').addEventListener('click',function(e ){
+      alert("Owl clicked")  //better Approach
+    },false)
+
+    document.getElementById("google").addEventListener('click',function(e){
+      e.preventDefault()
+    },false)
+
+    document.querySelector(".images").addEventListener('click',function(e){
+      if(e.target.tagName == "IMG"){
+      e.target.parentNode.remove();
+      }
+    },false)
+</script>
+</html>
